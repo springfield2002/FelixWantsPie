@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/soundtrack_from_pou_sky_jump_good_quality_-2783776703187581583.ogg-2471e40f89b59151ac39702624c9ce53.oggstr"
+
+[deps]
+
+source_file="res://SFX/soundtrack_from_pou_sky_jump_good_quality_-2783776703187581583.ogg"
+dest_files=[ "res://.import/soundtrack_from_pou_sky_jump_good_quality_-2783776703187581583.ogg-2471e40f89b59151ac39702624c9ce53.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

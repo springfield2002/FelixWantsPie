@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Notifications/109617.png" type="Texture" id=1]
+[ext_resource path="res://assets/Itens/Keys/color_key/Key_Red.tres" type="Texture" id=2]
+[ext_resource path="res://assets/Itens/Keys/color_key/Key_Green.tres" type="Texture" id=3]
+[ext_resource path="res://assets/assets/Door/door final/door_blue/0.tres" type="Texture" id=4]
+[ext_resource path="res://assets/assets/Door/door final/door_red/0.tres" type="Texture" id=5]
+[ext_resource path="res://assets/assets/Door/door final/door_green/0.tres" type="Texture" id=6]
+[ext_resource path="res://assets/Itens/Keys/color_key/Key_Blue.tres" type="Texture" id=7]
+[ext_resource path="res://assets/Notifications/intro/dialog-background.png" type="Texture" id=8]
+[ext_resource path="res://assets/Shader/black.png" type="Texture" id=9]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="black" type="Sprite" parent="."]
+position = Vector2( 511.659, 302.282 )
+scale = Vector2( 4.58683, 2.78738 )
+texture = ExtResource( 9 )
+
+[node name="dialog-background" type="Sprite" parent="."]
+position = Vector2( 496.902, 246.869 )
+scale = Vector2( 0.341192, 1.3084 )
+texture = ExtResource( 8 )
+
+[node name="0" type="Sprite" parent="."]
+position = Vector2( 610, 155.78 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="1" type="Sprite" parent="."]
+position = Vector2( 610, 255.78 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="2" type="Sprite" parent="."]
+position = Vector2( 610, 355.78 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="Key_Blue" type="Sprite" parent="."]
+position = Vector2( 384.361, 162.78 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Key_Red" type="Sprite" parent="."]
+position = Vector2( 384.361, 364 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Key_Green" type="Sprite" parent="."]
+position = Vector2( 384.361, 263 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="109617" type="Sprite" parent="."]
+position = Vector2( 40, 265.48 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+offset = Vector2( 2361.09, -517.399 )
+
+[node name="109619" type="Sprite" parent="."]
+position = Vector2( 40, 365 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+offset = Vector2( 2361.09, -517.399 )
+
+[node name="109620" type="Sprite" parent="."]
+position = Vector2( 40, 465 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+offset = Vector2( 2361.09, -517.399 )

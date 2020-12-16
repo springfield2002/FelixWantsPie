@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ding_sound_effect_X6ET_nIByoK-gucZ9i9J.ogg-4b222d488c857c4a5bcca6c4b667744b.oggstr"
+
+[deps]
+
+source_file="res://SFX/ding_sound_effect_X6ET_nIByoK-gucZ9i9J.ogg"
+dest_files=[ "res://.import/ding_sound_effect_X6ET_nIByoK-gucZ9i9J.ogg-4b222d488c857c4a5bcca6c4b667744b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/club_penguin_pizza_parlor_theme_charlie_s_here_full_hq_-322452822334571949.ogg-40e1f7ce42b6b0865b857cdc3c9fb863.oggstr"
+
+[deps]
+
+source_file="res://instances/club_penguin_pizza_parlor_theme_charlie_s_here_full_hq_-322452822334571949.ogg"
+dest_files=[ "res://.import/club_penguin_pizza_parlor_theme_charlie_s_here_full_hq_-322452822334571949.ogg-40e1f7ce42b6b0865b857cdc3c9fb863.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

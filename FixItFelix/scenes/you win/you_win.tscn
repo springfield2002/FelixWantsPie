@@ -1,0 +1,328 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://04B_30__.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Felix/piewin3.tres" type="Texture" id=2]
+[ext_resource path="res://assets/Felix/piewin2.tres" type="Texture" id=3]
+[ext_resource path="res://assets/Felix/felix2.tres" type="Texture" id=4]
+[ext_resource path="res://assets/Felix/felix.tres" type="Texture" id=5]
+[ext_resource path="res://assets/Felix/piewin6.tres" type="Texture" id=6]
+[ext_resource path="res://assets/Felix/piewin.tres" type="Texture" id=7]
+[ext_resource path="res://assets/Felix/piewin4.tres" type="Texture" id=8]
+[ext_resource path="res://assets/Felix/felix4.tres" type="Texture" id=9]
+[ext_resource path="res://assets/Felix/fixit2.tres" type="Texture" id=10]
+[ext_resource path="res://assets/Felix/felix3.tres" type="Texture" id=11]
+[ext_resource path="res://assets/Felix/ohno.tres" type="Texture" id=12]
+[ext_resource path="res://assets/Felix/MWalk2.tres" type="Texture" id=13]
+[ext_resource path="res://assets/Felix/getH1.tres" type="Texture" id=14]
+[ext_resource path="res://assets/Felix/MWalk.tres" type="Texture" id=15]
+[ext_resource path="res://assets/Felix/MWalk1.tres" type="Texture" id=16]
+[ext_resource path="res://assets/Felix/getH3.tres" type="Texture" id=17]
+[ext_resource path="res://assets/Felix/piewin5.tres" type="Texture" id=18]
+[ext_resource path="res://assets/Felix/felixinicio.tres" type="Texture" id=19]
+[ext_resource path="res://assets/Felix/getH2.tres" type="Texture" id=20]
+[ext_resource path="res://SFX/kids_cheering_gaming_sound_effect_hd_-4947645024402633994_1.ogg" type="AudioStream" id=21]
+[ext_resource path="res://SFX/wii_party_soundtrack_results_jingle_music_hd_6214949664799850436.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/Felix/transition.png" type="Texture" id=23]
+[ext_resource path="res://instances/you_win.gd" type="Script" id=24]
+
+[sub_resource type="Animation" id=1]
+resource_name = "you win"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/AnimatedSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "walk", "Hi" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -56.0842, 420.126 ), Vector2( 543.953, 420.126 ) ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.425714,
+"start_offset": 0.0,
+"stream": ExtResource( 22 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("AudioStreamPlayer2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.592298,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Panel/Label:percent_visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CanvasLayer/ColorRect:material:shader_param/cutoff")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 5.8, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.0, 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0, 1.68156e-44, 9.91838e-39, 0.14375, 0.56338, 1, 2 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.14902, 1, 0, 1, 0.952941, 1, 0, 1, 1, 0.694118, 0, 1, 0, 0.0705882, 1, 1, 0.984314, 0, 1, 1, 0.968627, 1, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+trail_divisor = 5
+emission_shape = 2
+emission_box_extents = Vector3( 512, 0, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 2, 0 )
+flatness = 0.27
+gravity = Vector3( 0, 48, 0 )
+initial_velocity = 55.56
+initial_velocity_random = 0.52
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.21
+scale = 10.0
+scale_random = 0.45
+color_ramp = SubResource( 4 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "Hi",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 18 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "pie",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "HIT",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 20 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "getHammer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": false,
+"name": "oh no",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "walkHammer",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8.86622, 16.3208 )
+
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform float cutoff: hint_range(0.0,1.0);
+uniform float smooth_size: hint_range(0.0,1.0);
+uniform sampler2D mask: hint_albedo;
+void fragment()
+{
+	float value = texture(mask,UV).r;
+	float alpha = smoothstep(cutoff, cutoff + smooth_size, value * (1.0 - smooth_size) + smooth_size);
+		COLOR = vec4(COLOR.rgb,alpha);
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/cutoff = 1.0
+shader_param/smooth_size = 0.126
+shader_param/mask = ExtResource( 23 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.96689
+margin_top = 0.0577774
+margin_right = 1.96692
+margin_bottom = 0.0578003
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/you win" = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+margin_top = -2.0
+margin_right = 1023.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+light_mask = 175
+margin_left = 328.225
+margin_top = 245.735
+margin_right = 719.225
+margin_bottom = 311.735
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+text = "YOU WIN"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 510.728, 5.62802 )
+amount = 500
+randomness = 0.24
+process_material = SubResource( 5 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( -56.0842, 420.126 )
+scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_group_": true,
+"_editor_description_": ""
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+rotation = 3.14159
+scale = Vector2( -1, -1 )
+frames = SubResource( 6 )
+animation = "walk"
+frame = 1
+playing = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0.629959, 0.629959 )
+shape = SubResource( 7 )
+disabled = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 9 )
+margin_left = -4.0
+margin_top = -2.0
+margin_right = 1023.0
+margin_bottom = 602.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}

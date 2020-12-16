@@ -1,0 +1,568 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://assets/Itens/Keys/keyCorrect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://instances/world.gd" type="Script" id=2]
+[ext_resource path="res://assets/assets/Door/door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Itens/Keys/keyFalse.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Itens/Moldura/moldura.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/assets/background/room.png" type="Texture" id=6]
+[ext_resource path="res://assets/Notifications/intro/tutorial.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SFX/pokemon_blue_red_route_1_2139621201465140798.ogg" type="AudioStream" id=8]
+[ext_resource path="res://instances/ParallaxBackground.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/mariotile.png" type="Texture" id=10]
+[ext_resource path="res://assets/TILIES.png" type="Texture" id=11]
+[ext_resource path="res://assets/grass.png" type="Texture" id=12]
+[ext_resource path="res://assets/path-0002.png" type="Texture" id=13]
+[ext_resource path="res://instances/Node2D.tscn" type="PackedScene" id=14]
+[ext_resource path="res://instances/key house.png" type="Texture" id=15]
+[ext_resource path="res://assets/Felix/transition.png" type="Texture" id=16]
+[ext_resource path="res://SFX/I GOT IT.wav" type="AudioStream" id=17]
+[ext_resource path="res://scenesopen transition.tres" type="Animation" id=18]
+
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform float cutoff: hint_range(0.0,1.0);
+uniform float smooth_size: hint_range(0.0,1.0);
+uniform sampler2D mask: hint_albedo;
+void fragment()
+{
+	float value = texture(mask,UV).r;
+	float alpha = smoothstep(cutoff, cutoff + smooth_size, value * (1.0 - smooth_size) + smooth_size);
+		COLOR = vec4(COLOR.rgb,alpha);
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/cutoff = 0.0
+shader_param/smooth_size = 0.126
+shader_param/mask = ExtResource( 16 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "mariotile.png 0"
+0/texture = ExtResource( 10 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 544, 128, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "TILIES.png 1"
+1/texture = ExtResource( 11 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 608, 480, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "mariotile.png 2"
+2/texture = ExtResource( 10 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 544, 96, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "path-0002.png 3"
+3/texture = ExtResource( 13 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "grass.png 4"
+4/texture = ExtResource( 12 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 448, 128, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+
+[sub_resource type="Animation" id=2]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.1, 0.2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -200, -50 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "world 1"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "walk", "default" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -31.464, -425.79 ), Vector2( 450.99, -425.79 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/AnimatedSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node2D/AnimatedSprite:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/ColorRect:material:shader_param/cutoff")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Camera2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 526.682, -554.001 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Camera2D:zoom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Camera2D:offset")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "world 2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "walk", "default" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 780.219, -430.438 ), Vector2( 780.219, -430.438 ), Vector2( 1082.01, -434.699 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/AnimatedSprite:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/ColorRect:material:shader_param/cutoff")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0.6 )
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Camera2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 526.682, -554.001 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Camera2D:zoom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Camera2D:offset")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -16.6597, 864.214 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -469.941 ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 9 )
+margin_left = -3.94702
+margin_top = -2.0
+margin_right = 1022.05
+margin_bottom = 602.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 9 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 8, 8 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -917504, 4, 0, -917503, 4, 0, -917502, 4, 0, -917501, 4, 0, -917500, 4, 0, -917499, 4, 0, -917498, 4, 0, -917497, 4, 0, -917496, 4, 0, -917495, 4, 0, -917494, 4, 0, -917493, 4, 0, -917492, 4, 0, -917491, 4, 0, -917490, 4, 0, -917489, 4, 0, -917488, 4, 0, -917487, 4, 0, -917486, 4, 0, -917485, 4, 0, -917484, 4, 0, -917483, 4, 0, -917482, 4, 0, -917481, 4, 0, -917480, 4, 0, -917479, 4, 0, -917478, 4, 0, -917477, 4, 0, -917476, 4, 0, -917475, 4, 0, -917474, 4, 0, -917473, 4, 0, -917472, 4, 0, -851968, 4, 0, -851967, 4, 0, -851966, 4, 0, -851965, 4, 0, -851964, 4, 0, -851963, 4, 0, -851962, 4, 0, -851961, 4, 0, -851960, 4, 0, -851959, 4, 0, -851958, 4, 0, -851957, 4, 0, -851956, 4, 0, -851955, 4, 0, -851954, 4, 0, -851953, 4, 0, -851952, 4, 0, -851951, 4, 0, -851950, 4, 0, -851949, 4, 0, -851948, 4, 0, -851947, 4, 0, -851946, 4, 0, -851945, 4, 0, -851944, 4, 0, -851943, 4, 0, -851942, 4, 0, -851941, 4, 0, -851940, 4, 0, -851939, 4, 0, -851938, 4, 0, -851937, 4, 0, -851936, 4, 0, -786432, 4, 0, -786431, 4, 0, -786430, 4, 0, -786429, 4, 0, -786428, 4, 0, -786427, 4, 0, -786426, 4, 0, -786425, 4, 0, -786424, 4, 0, -786423, 4, 0, -786422, 4, 0, -786421, 4, 0, -786420, 4, 0, -786419, 4, 0, -786418, 4, 0, -786417, 4, 0, -786416, 4, 0, -786415, 4, 0, -786414, 4, 0, -786413, 4, 0, -786412, 4, 0, -786411, 4, 0, -786410, 4, 0, -786409, 4, 0, -786408, 4, 0, -786407, 4, 0, -786406, 4, 0, -786405, 4, 0, -786404, 4, 0, -786403, 4, 0, -786402, 4, 0, -786401, 4, 0, -786400, 4, 0, -720896, 2, 0, -720895, 2, 0, -720894, 2, 0, -720893, 2, 0, -720892, 2, 0, -720891, 2, 0, -720890, 2, 0, -720889, 2, 0, -720888, 2, 0, -720887, 2, 0, -720886, 2, 0, -720885, 2, 0, -720884, 2, 0, -720883, 2, 0, -720882, 2, 0, -720881, 2, 0, -720880, 2, 0, -720879, 2, 0, -720878, 2, 0, -720877, 2, 0, -720876, 2, 0, -720875, 2, 0, -720874, 2, 0, -720873, 2, 0, -720872, 2, 0, -720871, 2, 0, -720870, 2, 0, -720869, 2, 0, -720868, 2, 0, -720867, 2, 0, -720866, 2, 0, -720865, 2, 0, -720864, 2, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -655354, 0, 0, -655353, 0, 0, -655352, 0, 0, -655351, 0, 0, -655350, 0, 0, -655349, 0, 0, -655348, 0, 0, -655347, 0, 0, -655346, 0, 0, -655345, 0, 0, -655344, 0, 0, -655343, 0, 0, -655342, 0, 0, -655341, 0, 0, -655340, 0, 0, -655339, 0, 0, -655338, 0, 0, -655337, 0, 0, -655336, 0, 0, -655335, 0, 0, -655334, 0, 0, -655333, 0, 0, -655332, 0, 0, -655331, 0, 0, -655330, 0, 0, -655329, 0, 0, -655328, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -589808, 0, 0, -589807, 0, 0, -589806, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589802, 0, 0, -589801, 0, 0, -589800, 0, 0, -589799, 0, 0, -589798, 0, 0, -589797, 0, 0, -589796, 0, 0, -589795, 0, 0, -589794, 0, 0, -589793, 0, 0, -589792, 0, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2( 8, 8 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -917504, 4, 0, -917503, 4, 0, -917502, 4, 0, -917501, 4, 0, -917500, 4, 0, -917499, 4, 0, -917498, 4, 0, -917497, 4, 0, -917496, 4, 0, -917495, 4, 0, -917494, 4, 0, -917493, 4, 0, -917492, 4, 0, -917491, 4, 0, -917490, 4, 0, -917489, 4, 0, -917488, 4, 0, -917487, 4, 0, -917486, 4, 0, -917485, 4, 0, -917484, 4, 0, -917483, 4, 0, -917482, 4, 0, -917481, 4, 0, -917480, 4, 0, -917479, 4, 0, -917478, 4, 0, -917477, 4, 0, -917476, 4, 0, -917475, 4, 0, -917474, 4, 0, -917473, 4, 0, -917472, 4, 0, -851968, 3, 0, -851967, 3, 0, -851966, 3, 0, -851965, 3, 0, -851964, 3, 0, -851963, 3, 0, -851962, 3, 0, -851961, 3, 0, -851960, 3, 0, -851959, 3, 0, -851958, 3, 0, -851957, 3, 0, -851956, 3, 0, -851955, 3, 0, -851954, 3, 0, -851953, 3, 0, -851952, 3, 0, -851951, 3, 0, -851950, 3, 0, -851949, 3, 0, -851948, 3, 0, -851947, 3, 0, -851946, 3, 0, -851945, 3, 0, -851944, 3, 0, -851943, 3, 0, -851942, 3, 0, -851941, 3, 0, -851940, 3, 0, -851939, 3, 0, -851938, 3, 0, -851937, 3, 0, -851936, 3, 0, -786432, 4, 0, -786431, 4, 0, -786430, 4, 0, -786429, 4, 0, -786428, 4, 0, -786427, 4, 0, -786426, 4, 0, -786425, 4, 0, -786424, 4, 0, -786423, 4, 0, -786422, 4, 0, -786421, 4, 0, -786420, 4, 0, -786419, 4, 0, -786418, 4, 0, -786417, 4, 0, -786416, 4, 0, -786415, 4, 0, -786414, 4, 0, -786413, 4, 0, -786412, 4, 0, -786411, 4, 0, -786410, 4, 0, -786409, 4, 0, -786408, 4, 0, -786407, 4, 0, -786406, 4, 0, -786405, 4, 0, -786404, 4, 0, -786403, 4, 0, -786402, 4, 0, -786401, 4, 0, -786400, 4, 0, -720896, 2, 0, -720895, 2, 0, -720894, 2, 0, -720893, 2, 0, -720892, 2, 0, -720891, 2, 0, -720890, 2, 0, -720889, 2, 0, -720888, 2, 0, -720887, 2, 0, -720886, 2, 0, -720885, 2, 0, -720884, 2, 0, -720883, 2, 0, -720882, 2, 0, -720881, 2, 0, -720880, 2, 0, -720879, 2, 0, -720878, 2, 0, -720877, 2, 0, -720876, 2, 0, -720875, 2, 0, -720874, 2, 0, -720873, 2, 0, -720872, 2, 0, -720871, 2, 0, -720870, 2, 0, -720869, 2, 0, -720868, 2, 0, -720867, 2, 0, -720866, 2, 0, -720865, 2, 0, -720864, 2, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -655354, 0, 0, -655353, 0, 0, -655352, 0, 0, -655351, 0, 0, -655350, 0, 0, -655349, 0, 0, -655348, 0, 0, -655347, 0, 0, -655346, 0, 0, -655345, 0, 0, -655344, 0, 0, -655343, 0, 0, -655342, 0, 0, -655341, 0, 0, -655340, 0, 0, -655339, 0, 0, -655338, 0, 0, -655337, 0, 0, -655336, 0, 0, -655335, 0, 0, -655334, 0, 0, -655333, 0, 0, -655332, 0, 0, -655331, 0, 0, -655330, 0, 0, -655329, 0, 0, -655328, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -589808, 0, 0, -589807, 0, 0, -589806, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589802, 0, 0, -589801, 0, 0, -589800, 0, 0, -589799, 0, 0, -589798, 0, 0, -589797, 0, 0, -589796, 0, 0, -589795, 0, 0, -589794, 0, 0, -589793, 0, 0, -589792, 0, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="room" type="Sprite" parent="."]
+position = Vector2( 1343.6, 368.125 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 6 )
+
+[node name="Door" parent="." instance=ExtResource( 3 )]
+position = Vector2( 284.304, 214.537 )
+scale = Vector2( 5, 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 526.682, -554.001 )
+current = true
+
+[node name="Moldura" parent="." instance=ExtResource( 5 )]
+position = Vector2( 835.758, 173.203 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 350, 150 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("Node2D")
+anims/intro = SubResource( 2 )
+
+[node name="Node2D" parent="AnimationPlayer" instance=ExtResource( 7 )]
+position = Vector2( 4.90271, 849.733 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/zoom = SubResource( 3 )
+
+[node name="key_correct" parent="." instance=ExtResource( 1 )]
+position = Vector2( 169, 519 )
+
+[node name="key_False" parent="." instance=ExtResource( 4 )]
+position = Vector2( 847.003, 519 )
+
+[node name="FadeIn" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 4 )
+
+[node name="FadeOut" type="AnimationPlayer" parent="."]
+anims/FadeOut = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+
+[node name="Node2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( -31.464, -425.79 )
+scale = Vector2( 2, 2 )
+
+[node name="AnimatedSprite" parent="Node2D" index="0"]
+animation = "walk"
+playing = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 451.673
+margin_top = -823.973
+margin_right = 907.673
+margin_bottom = -386.973
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Felix" type="AnimationPlayer" parent="."]
+"anims/scenesopen transition" = ExtResource( 18 )
+"anims/world 1" = SubResource( 6 )
+"anims/world 2" = SubResource( 7 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 16.6597, -864.214 )
+stream = ExtResource( 17 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -928.0
+margin_top = -4.0
+margin_right = -9.0
+margin_bottom = 580.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="input_event" from="key_correct" to="." method="_on_key_correct_input_event"]
+[connection signal="input_event" from="key_False" to="." method="_on_key_False_input_event"]
+
+[editable path="Node2D"]

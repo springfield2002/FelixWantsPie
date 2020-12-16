@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RED.ogg-364ba662b5800925d9beb09ae0f9ca3b.oggstr"
+
+[deps]
+
+source_file="res://assets/Shader/RED.ogg"
+dest_files=[ "res://.import/RED.ogg-364ba662b5800925d9beb09ae0f9ca3b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

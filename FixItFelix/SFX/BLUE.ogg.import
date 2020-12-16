@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BLUE.ogg-893ade34c46e0d9c1417292445a1e096.oggstr"
+
+[deps]
+
+source_file="res://SFX/BLUE.ogg"
+dest_files=[ "res://.import/BLUE.ogg-893ade34c46e0d9c1417292445a1e096.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

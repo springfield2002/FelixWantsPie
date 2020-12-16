@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wii_party_soundtrack_main_menu_music_-7271930275600553989.ogg-b57da81db63d62cacdbe3ef5118845e2.oggstr"
+
+[deps]
+
+source_file="res://instances/wii_party_soundtrack_main_menu_music_-7271930275600553989.ogg"
+dest_files=[ "res://.import/wii_party_soundtrack_main_menu_music_-7271930275600553989.ogg-b57da81db63d62cacdbe3ef5118845e2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

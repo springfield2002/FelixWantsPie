@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RED.ogg-8ffcc04dc350ab2eeae2c8500594c89a.oggstr"
+
+[deps]
+
+source_file="res://SFX/RED.ogg"
+dest_files=[ "res://.import/RED.ogg-8ffcc04dc350ab2eeae2c8500594c89a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

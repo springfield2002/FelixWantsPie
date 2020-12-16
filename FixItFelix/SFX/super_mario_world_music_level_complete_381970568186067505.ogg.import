@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/super_mario_world_music_level_complete_381970568186067505.ogg-d4ffd2edee19b757c93a90c58d187502.oggstr"
+
+[deps]
+
+source_file="res://instances/super_mario_world_music_level_complete_381970568186067505.ogg"
+dest_files=[ "res://.import/super_mario_world_music_level_complete_381970568186067505.ogg-d4ffd2edee19b757c93a90c58d187502.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

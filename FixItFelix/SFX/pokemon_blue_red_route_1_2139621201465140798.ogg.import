@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pokemon_blue_red_route_1_2139621201465140798.ogg-78ad3f066fc869cde2701a82e962f13e.oggstr"
+
+[deps]
+
+source_file="res://SFX/pokemon_blue_red_route_1_2139621201465140798.ogg"
+dest_files=[ "res://.import/pokemon_blue_red_route_1_2139621201465140798.ogg-78ad3f066fc869cde2701a82e962f13e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

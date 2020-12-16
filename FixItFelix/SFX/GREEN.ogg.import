@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GREEN.ogg-8ddb4a75954d22cbe3ee0066e9a96fdc.oggstr"
+
+[deps]
+
+source_file="res://SFX/GREEN.ogg"
+dest_files=[ "res://.import/GREEN.ogg-8ddb4a75954d22cbe3ee0066e9a96fdc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
