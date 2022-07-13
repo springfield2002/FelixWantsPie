@@ -14,4 +14,5 @@ out on a enjoyable journey back home to gets his lunch!
 
 ### Game Footage
 
-![]('./footage/first game.png')
+![texto]('https://github.com/tiagoAry15/FelixWantsPie/blob/main/FixItFelix/footage/first%20game.png') 
+![texto]('https://github.com/tiagoAry15/FelixWantsPie/blob/main/FixItFelix/footage/ingame.png')
