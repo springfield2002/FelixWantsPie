@@ -1,5 +1,6 @@
 # Felix Wants Pie 
-## Felix Wants Pie is a Godot video game project for our prototypes experimentation class from Computer Science Graduation
+### Description
+ Felix Wants Pie is a Godot video game project for our prototypes experimentation class from Computer Science Graduation
 
 ### Plot:
 During his daily work, Fix-it Felix Jr. felt his stomach growling, sinalizing him it was lunch time, and Felix knows what better fits his belly at these moments: Pie.
@@ -13,6 +14,7 @@ out on a enjoyable journey back home to gets his lunch!
 - João Augusto Fernandes Lima
 
 ### Game Footage
-
-![texto]('https://github.com/tiagoAry15/FelixWantsPie/blob/main/FixItFelix/footage/first%20game.png') 
-![texto]('https://github.com/tiagoAry15/FelixWantsPie/blob/main/FixItFelix/footage/ingame.png')
+![texto](https://github.com/tiagoAry15/FelixWantsPie/blob/main/FixItFelix/footage/tela%20principal.png?raw=true) 
+![texto](https://github.com/tiagoAry15/FelixWantsPie/blob/main/FixItFelix/footage/first%20game.png?raw=true) 
+![texto](https://github.com/tiagoAry15/FelixWantsPie/blob/main/FixItFelix/footage/ingame.png?raw=true)
+![texto](https://github.com/tiagoAry15/FelixWantsPie/blob/main/FixItFelix/footage/screenshot-www.youtube.com-2022.07.13-09_37_34.png?raw=true)
